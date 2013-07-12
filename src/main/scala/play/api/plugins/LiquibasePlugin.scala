@@ -6,7 +6,7 @@ import liquibase.changelog.ChangeSet
 import liquibase.database.jvm.JdbcConnection
 import liquibase.resource.FileSystemResourceAccessor
 import play.api._
-import db.{DB, DBPlugin}
+import play.api.db.{DB, DBPlugin}
 
 /**
  * @date: 03.04.12
@@ -43,9 +43,9 @@ class LiquibasePlugin(app: Application) extends Plugin {
               Logger("play").warn("Your production database [" + dbName + "] needs Liquibase updates! \n\n" + getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
               Logger("play").warn("Run with -DapplyLiquibase." + dbName + "=true if you want to run them automatically (be careful)")
 
-              throw PlayException("Liquibase script should be applyed, set applyLiquibase."+dbName+"=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
+              throw new PlayException("Liquibase script should be applyed, set applyLiquibase."+dbName+"=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
             }
-            case _ => PlayException("Liquibase script should be applyed, set applyLiquibase."+dbName+"=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
+            case _ => new PlayException("Liquibase script should be applyed, set applyLiquibase."+dbName+"=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
           }
         })(app)
       }
