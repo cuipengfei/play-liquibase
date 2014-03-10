@@ -7,7 +7,7 @@ name := "play-liquibase"
 
 organization := "com.code-troopers.play"
 
-version := "1.0"
+version := "1.1-SNAPSHOT"
 
 scalaVersion := "2.10.2"
 
