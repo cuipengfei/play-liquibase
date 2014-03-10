@@ -1,6 +1,11 @@
+import SonatypeKeys._
+
+// Import default settings. This changes `publishTo` settings to use the Sonatype repository and add several commands for publishing.
+sonatypeSettings
+
 name := "play-liquibase"
 
-organization := "play"
+organization := "com.code-troopers.play"
 
 version := "1.0"
 
@@ -9,8 +14,28 @@ scalaVersion := "2.10.2"
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= Seq(
-    "play" % "play-jdbc_2.10" % "2.1.2",
-    "org.liquibase" % "liquibase-core" % "2.0.3"
+    "com.typesafe.play" %% "play-java-jdbc" % "2.2.1",
+    "org.liquibase" % "liquibase-core" % "3.1.1"
 )
 
-EclipseKeys.withSource := true
+pomExtra := (
+  <url>https://github.com/CedricGatay/play-liquibase</url>
+    <licenses>
+      <license>
+        <name>BSD-style</name>
+        <url>http://www.opensource.org/licenses/bsd-license.php</url>
+        <distribution>repo</distribution>
+      </license>
+    </licenses>
+    <scm>
+      <url>git@github.com:CedricGatay/play-liquibase.git</url>
+      <connection>scm:git:git@github.com:CedricGatay/play-liquibase.git</connection>
+    </scm>
+    <developers>
+      <developer>
+        <id>cgatay</id>
+        <name>Cedric Gatay</name>
+        <url>http://www.code-troopers.com</url>
+      </developer>
+    </developers>
+  )

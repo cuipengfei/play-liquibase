@@ -1,4 +1,4 @@
-package play.api.plugins
+package com.codetroopers.play
 
 import liquibase.Liquibase
 import scala.collection.JavaConversions._
