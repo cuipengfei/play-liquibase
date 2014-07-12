@@ -1,6 +1,6 @@
 name := "play-liquibase"
 
-organization := "com.code-troopers.play"
+organization := "cuipengfei.play"
 
 version := "1.1-SNAPSHOT"
 
@@ -9,8 +9,8 @@ scalaVersion := "2.10.4"
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-java-jdbc" % "2.2.1",
-  "org.liquibase" % "liquibase-core" % "3.1.1"
+  "com.typesafe.play" %% "play-jdbc" % "2.3.1",
+  "org.liquibase" % "liquibase-core" % "3.2.0"
 )
 
 pomExtra := <url>https://github.com/CedricGatay/play-liquibase</url>
