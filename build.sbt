@@ -1,15 +1,10 @@
-import SonatypeKeys._
-
-// Import default settings. This changes `publishTo` settings to use the Sonatype repository and add several commands for publishing.
-sonatypeSettings
-
 name := "play-liquibase"
 
 organization := "com.code-troopers.play"
 
 version := "1.1-SNAPSHOT"
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.10.4"
 
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
