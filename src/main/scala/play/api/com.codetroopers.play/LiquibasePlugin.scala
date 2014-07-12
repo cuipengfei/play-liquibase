@@ -43,9 +43,9 @@ class LiquibasePlugin(app: Application) extends Plugin {
               Logger("play").warn("Your production database [" + dbName + "] needs Liquibase updates! \n\n" + getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
               Logger("play").warn("Run with -DapplyLiquibase." + dbName + "=true if you want to run them automatically (be careful)")
 
-              throw new PlayException("Liquibase script should be applied, set applyLiquibase."+dbName+"=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
+              throw new PlayException("Liquibase script should be applied, set applyLiquibase." + dbName + "=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
             }
-            case _ => new PlayException("Liquibase script should be applied, set applyLiquibase."+dbName+"=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
+            case _ => new PlayException("Liquibase script should be applied, set applyLiquibase." + dbName + "=true in application.conf", getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext)))
           }
         })(app)
       }
