@@ -7,7 +7,7 @@ import liquibase.resource.FileSystemResourceAccessor
 import liquibase.Liquibase
 import liquibase.database.jvm.JdbcConnection
 import liquibase.logging.LogLevel
-import scala.collection.JavaConverters._
+import scala.collection.JavaConversions._
 
 /**
  * @date: 03.04.12
@@ -58,7 +58,7 @@ class LiquibasePlugin(app: Application) extends Plugin {
   }
 
   private def prodDesc(liqui: Liquibase): String = {
-    getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext).asScala)
+    getScriptDescriptions(liqui.listUnrunChangeSets(ProductionContext))
   }
 
   private def liquibasePluginNotAppliedError(dbName: String, liqui: Liquibase): PlayException = {
