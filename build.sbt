@@ -1,3 +1,5 @@
+import SonatypeKeys._
+
 name := "play-liquibase"
 
 organization := "com.github.cuipengfei"
@@ -8,10 +10,19 @@ scalaVersion := "2.11.1"
 
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
+sonatypeSettings
+
+xerial.sbt.Sonatype.sonatypeSettings
+
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-jdbc" % "2.3.1",
   "org.liquibase" % "liquibase-core" % "3.2.0"
 )
+
+credentials += Credentials("Sonatype Nexus Repository Manager",
+  "oss.sonatype.org",
+  "cuipengfei",
+  "19870822")
 
 pomExtra := <url>https://github.com/cuipengfei/play-liquibase</url>
   <licenses>
