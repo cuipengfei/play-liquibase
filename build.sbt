@@ -1,10 +1,10 @@
 name := "play-liquibase"
 
-organization := "cuipengfei.play"
+organization := "com.github.cuipengfei"
 
 version := "1.1-SNAPSHOT"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.1"
 
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "org.liquibase" % "liquibase-core" % "3.2.0"
 )
 
-pomExtra := <url>https://github.com/CedricGatay/play-liquibase</url>
+pomExtra := <url>https://github.com/cuipengfei/play-liquibase</url>
   <licenses>
     <license>
       <name>BSD-style</name>
@@ -22,13 +22,13 @@ pomExtra := <url>https://github.com/CedricGatay/play-liquibase</url>
     </license>
   </licenses>
   <scm>
-    <url>git@github.com:CedricGatay/play-liquibase.git</url>
-    <connection>scm:git:git@github.com:CedricGatay/play-liquibase.git</connection>
+    <url>git@github.com:cuipengfei/play-liquibase.git</url>
+    <connection>scm:git:git@github.com:cuipengfei/play-liquibase.git</connection>
   </scm>
   <developers>
     <developer>
-      <id>cgatay</id>
-      <name>Cedric Gatay</name>
-      <url>http://www.code-troopers.com</url>
+      <id>cuipengfei</id>
+      <name>Cui Pengfei</name>
+      <url>http://cuipengfei.me</url>
     </developer>
   </developers>

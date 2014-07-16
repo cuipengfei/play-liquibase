@@ -1,4 +1,4 @@
-package cuipengfei.play
+package com.github.cuipengfei
 
 import play.api._
 import liquibase.changelog.ChangeSet
